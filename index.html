@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Ветеринарный калькулятор дозировок</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header><a class="brand" href="./"><span class="logo" aria-hidden="true">✚</span> ВетРасчёт</a><button id="theme" type="button" aria-label="Включить тёмную тему">☾ Тёмная тема</button></header>
+    <main>
+      <div class="intro"><span class="eyebrow">ПРОСТО И НАГЛЯДНО</span><h1>Точный расчёт.<br><span>Спокойная забота.</span></h1><p>Рассчитайте количество действующего вещества и объём раствора по заданной дозировке.</p></div>
+      <section class="calculator" aria-label="Ветеринарный калькулятор дозировок">
+        <form id="calculator" novalidate>
+          <h2>Параметры расчёта</h2><p class="hint">Используйте дозировку, назначенную ветеринаром.</p>
+          <div class="field"><label for="weight">Масса животного</label><div class="input-wrap"><input id="weight" name="weight" type="text" inputmode="decimal" placeholder="Например, 5" autocomplete="off" aria-describedby="weight-error"><span>кг</span></div><p class="error" id="weight-error"></p></div>
+          <div class="field"><label for="dose">Дозировка препарата</label><div class="input-wrap"><input id="dose" name="dose" type="text" inputmode="decimal" placeholder="Например, 10" autocomplete="off" aria-describedby="dose-error"><span>мг/кг</span></div><p class="error" id="dose-error"></p></div>
+          <div class="field"><label for="concentration">Концентрация раствора</label><div class="input-wrap"><input id="concentration" name="concentration" type="text" inputmode="decimal" placeholder="Например, 50" autocomplete="off" aria-describedby="concentration-error"><span>мг/мл</span></div><p class="error" id="concentration-error"></p></div>
+          <button class="reset" type="reset">Сбросить значения ↺</button>
+        </form>
+        <div class="results" aria-live="polite" aria-atomic="true">
+          <span class="eyebrow">РЕЗУЛЬТАТ</span><h2>Расчёт дозы</h2><p id="status">Заполните три поля для расчёта.</p>
+          <div class="result"><span>Действующее вещество</span><div><output id="milligrams">—</output> <span class="unit">мг</span></div></div>
+          <div class="result accent"><span>Объём раствора</span><div><output id="milliliters">—</output> <span class="unit">мл</span></div></div>
+          <div class="formula"><strong>Как мы считаем</strong><p>Масса × дозировка = количество в мг</p><p>Количество в мг ÷ концентрация = объём в мл</p><small>Результаты округлены до 6 значащих цифр. Очень малые и большие значения показаны в научной записи.</small></div>
+        </div>
+      </section>
+      <aside class="notice"><span aria-hidden="true">ⓘ</span><p><strong>Математика — в помощь, решение — за врачом.</strong> Калькулятор проверяет только расчёты и не назначает лекарства. Проверьте единицы, концентрацию и назначение ветеринара перед применением. Округление для шприца и способ введения определяет специалист.</p></aside>
+    </main>
+    <footer>Ветеринарный калькулятор дозировок · С заботой о каждом пациенте</footer>
+  </div>
+</body>
+</html>
